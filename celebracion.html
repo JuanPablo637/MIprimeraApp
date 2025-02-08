@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Sabía que dirías que sí! 💖</title>
+  <!-- Fuente Poppins, más bonita -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /* Body con fondo claro y nubes estáticas */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+    /* Pseudo-elemento para las nubes de fondo */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.imgur.com/VpqpV03.png') no-repeat center center;
+      background-size: cover;
+      opacity: 0.5;
+      z-index: 0;
+    }
+    /* Título principal */
+    h1 {
+      font-size: 2.5em;
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+      z-index: 2;
+    }
+    /* Imagen GIF (Bubu) con efecto bounce y detalles extra */
+    .gif {
+      width: 180px;
+      height: auto;
+      animation: bounce 2s infinite ease-in-out;
+      margin-bottom: 20px;
+      z-index: 2;
+      border: 3px solid rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    /* Corazones cayendo */
+    .hearts {
+      position: absolute;
+      font-size: 3em;
+      color: rgba(0, 0, 0, 0.4);
+      animation: fall 4s linear infinite;
+      z-index: 1;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-100px); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+    /* Contenedor para la animación vertical del mensaje */
+    .moving-message-container {
+      margin-top: 20px;
+      overflow: hidden;
+      width: 100%;
+      z-index: 2;
+      animation: slideUp 3s ease-out forwards;
+    }
+    @keyframes slideUp {
+      0% { transform: translateY(100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    /* Mensaje en movimiento horizontal (marquee) de derecha a izquierda */
+    .moving-message {
+      white-space: nowrap;
+      display: inline-block;
+      font-size: 1.5em;
+      color: #333;
+      text-shadow: 1px 1px 3px rgba(255,255,255,0.7);
+      animation: marquee 16s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <h1>¡Sabía que dirías que sí! 💖</h1>
+  <img src="bubu.gif" alt="Bubu" class="gif">
+  
+  <!-- Contenedor que se desliza hacia arriba y contiene el mensaje en movimiento -->
+  <div class="moving-message-container">
+    <div class="moving-message">
+      <p>Las horas que pasé programando valieron la pena, ¡será un bonito día!, No te arrepentirás 😊</p>
+    </div>
+  </div>
+  
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("hearts");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
+
