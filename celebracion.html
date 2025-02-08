@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>¡Sabía que dirías que sí! 💖</title>
-  <!-- Fuente Poppins, más bonita -->
+  <!-- Fuente Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Reset básico */
@@ -13,10 +13,10 @@
       padding: 0;
       box-sizing: border-box;
     }
-    /* Body con fondo de gradiente en tonos azules pastel */
+    /* Body con fondo cálido (amarillo anaranjado) y nubes estáticas */
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      background: linear-gradient(135deg, #ffe29f, #ffa751);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -35,6 +35,7 @@
       left: 0;
       width: 100%;
       height: 100%;
+      background: url('https://i.imgur.com/VpqpV03.png') no-repeat center center;
       background-size: cover;
       opacity: 0.5;
       z-index: 0;
@@ -47,7 +48,7 @@
       margin-bottom: 20px;
       z-index: 2;
     }
-    /* Imagen GIF (Bubu) con efecto bounce y detalles extra */
+    /* Imagen GIF (Bubu) con efecto bounce y detalles */
     .gif {
       width: 180px;
       height: auto;
@@ -74,7 +75,7 @@
       0% { transform: translateY(-100px); opacity: 1; }
       100% { transform: translateY(100vh); opacity: 0; }
     }
-    /* Contenedor para la animación vertical del mensaje */
+    /* Contenedor para el mensaje con efecto slide up */
     .moving-message-container {
       margin-top: 20px;
       overflow: hidden;
@@ -86,18 +87,13 @@
       0% { transform: translateY(100%); opacity: 0; }
       100% { transform: translateY(0); opacity: 1; }
     }
-    /* Mensaje en movimiento horizontal (marquee) de derecha a izquierda */
+    /* Estilos para el mensaje */
     .moving-message {
-      white-space: nowrap;
-      display: inline-block;
-      font-size: 2em; /* Letras más grandes */
-      color: #333;
-      text-shadow: 2px 2px 4px rgba(255,255,255,0.7); /* Mayor contraste */
-      animation: marquee 17s linear infinite;
-    }
-    @keyframes marquee {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+      font-size: 2.5em;  /* Letras más grandes */
+      color: #fafafa;    /* Blanco suave */
+      text-shadow: 4px 4px 6px rgba(0,0,0,0.6); /* Sombra para buen contraste */
+      line-height: 1.3;
+      font-family: 'Dancing Script', cursive;  /* Fuente decorativa para el mensaje */
     }
   </style>
 </head>
@@ -105,10 +101,14 @@
   <h1>¡Sabía que dirías que sí! 💖</h1>
   <img src="bubu.gif" alt="Bubu" class="gif">
   
-  <!-- Contenedor que se desliza hacia arriba y contiene el mensaje en movimiento -->
+  <!-- Contenedor para el mensaje, que aparece de abajo hacia arriba -->
   <div class="moving-message-container">
     <div class="moving-message">
-      <p>Las horas que pasé programando valieron la pena, ¡será un bonito día!, No te arrepentirás 😊</p>
+      <p>
+        ✨ Las horas que pasé programando valieron la pena,<br>
+        ¡será un bonito día!<br>
+        ❤️ No te arrepentirás 😃✨
+      </p>
     </div>
   </div>
   
