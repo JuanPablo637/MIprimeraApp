@@ -13,10 +13,10 @@
       padding: 0;
       box-sizing: border-box;
     }
-    /* Body con fondo claro y nubes estáticas */
+    /* Body con fondo de gradiente en tonos azules pastel */
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -91,9 +91,9 @@
     .moving-message {
       white-space: nowrap;
       display: inline-block;
-      font-size: 1.5em;
+      font-size: 2em; /* Letras más grandes */
       color: #333;
-      text-shadow: 1px 1px 3px rgba(255,255,255,0.7);
+      text-shadow: 2px 2px 4px rgba(255,255,255,0.7); /* Mayor contraste */
       animation: marquee 16s linear infinite;
     }
     @keyframes marquee {
@@ -129,4 +129,3 @@
   </script>
 </body>
 </html>
-
